@@ -20,7 +20,7 @@ a{
     display: flex;
     color: #2CCED2;
     justify-content: flex-end;
-    margin-right: 30px;
+    margin-right: 3%;
 }
 
 .main_text{
@@ -75,17 +75,17 @@ a{
 
 .all_about{
     display: flex;
-    justify-content: space-around;
+    align-items: center; 
 }
 
 .about{
     color: #2CCED2;
     font-size: 20px;
     margin-top: 5%;
-    display: flex;
     margin-left: 20%;
     margin-right: 20%;
     flex-direction: column;
+    flex: 1;
 
 }
 
@@ -94,13 +94,21 @@ img{
     height: 320px;
     border-radius: 30%;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .pdp{
     display: flex;
     margin-top: 10%;
     margin-right: 10%;
+    flex: 1;
 
+}
+
+@media (max-width: 600px) { 
+    .all_about {
+        flex-direction: column; 
+    }
 }
 
 .about_text{
@@ -192,3 +200,4 @@ svg{
     text-align: center;
     color: #2CCED2
 }
+
