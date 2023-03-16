@@ -1,58 +1,66 @@
 *{
-        margin: 0;
-        padding: 0;
-        font-family: 'font0', Arial, Helvetica, sans-serif;
-        box-sizing: border-box;
-    }
-    body{
-        background-color: #1f1f1f;
-        color: #F3F3F3;
-    }
-    
-    img, svg{
-        height: 30px;
-      
-    }
-    
-    header{
-        background-color: #000000;
-        color: #F3F3F3;
-        padding: 20px 35px 10px 30px;
-    }
-    
-    nav{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    nav a{
-        text-decoration: none;
-        font-family: 'font0', Arial, Helvetica, sans-serif;
-        color: #fff;
-    }
-    nav a:hover{
-        color: #E92125 ;
-    }
-    nav .nav_gauche{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    nav .nav_droite{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    nav .nav_gauche .div_menu ul{
-        list-style: none;
-    }
-    nav .nav_gauche .div_menu li{
-        display: inline-block;
-        margin-left: 15px;
-    }
-    nav .nav_droite div{
-        margin-left: 25px;
-    }
-    nav .nav_gauche .div_menu, nav .nav_droite{
-        margin-top: 5px;
-    }
+    margin: 0;
+    padding: 0;
+    font-family: 'font0', Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1f1f1f;
+    color: #F3F3F3;
+}
+
+img, svg{
+    height: 30px;
+}
+
+header{
+    background-color: #000000;
+    color: #F3F3F3;
+    padding: 20px 35px 10px 30px;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav a{
+    text-decoration: none;
+    font-family: 'font0', Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+nav a:hover{
+    color: #E92125 ;
+}
+
+nav .nav_gauche{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav .nav_droite{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+nav .nav_gauche .div_menu ul{
+    list-style: none;
+}
+
+nav .nav_gauche .div_menu li{
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav .nav_droite div{
+    margin-left: 25px;
+}
+
+nav .nav_gauche .div_menu, nav .nav_droite{
+    margin-top: 5px;
+}
