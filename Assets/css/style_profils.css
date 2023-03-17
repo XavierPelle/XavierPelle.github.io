@@ -22,49 +22,55 @@ h1{
 }
 ul{
     list-style: none;
+    padding-inline-end: 40px;
 }
 
 .profil_picture_1{
     width  : 250px;
     height : 250px;
+    transition: transform .2s;
 }
 .profil_picture_1:hover{
-    border: 3px white solid;
+    transform: scale(1.2);
 }
 .profil_picture_2{
     width  : 250px;
     height : 250px;
+    transition: transform .2s;
+}
+.profil_picture_2:hover{
+    transform: scale(1.2);
 }
 .profil_picture_3{
     width  : 250px;
     height : 250px;
+    transition: transform .2s;
 }
-.profil_picture_add{
-    display: flex;
-    justify-content: space-around;
-    width : 250px;
-    height : 250px;
-    background : white;
-    border-radius : 125px;
+.profil_picture_3:hover{
+    transform: scale(1.2);
 }
 
 .profil_picture{
     display: flex;
     justify-content: space-around;
-    margin: 0 8% 0 8%;
-    margin-top: 15%;
+    margin: 15% 8% 0 8%;
 }
 .profil_name{
     display: flex;
     justify-content: space-around;
     font-size: 2rem;
-    margin: 1% 8% 0 8%;
+    margin: 30px 149px 0 149px;
 }
 .btn_profiles{
     display: flex;
-    justify-content: center;  
+    justify-content: center;
     font-size: 2em;
     width: 300px;
+}
+.place_btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
 }
 .btn_profiles:hover{
     border: 1px white solid;
