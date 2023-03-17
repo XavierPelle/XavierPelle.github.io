@@ -99,6 +99,12 @@ ul{
         margin-top: 5%;
         font-size: 2em;
     }
+    header
+    {
+        position: fixed;
+        inset: auto;
+        min-width: 100px;
+    }
     h1{
         font-size: calc(40px + 3.3vw);
     }
