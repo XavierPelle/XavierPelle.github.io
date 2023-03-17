@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -81,3 +82,4 @@ main section div a{
 main section div a:hover{
     transform: scale(1.1);
 }
+
