@@ -5,5 +5,3 @@
  * morpion
  * autoplay
  * fix scroller
-
- ...
