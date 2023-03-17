@@ -51,13 +51,18 @@ ul{
 .profil_picture{
     display: flex;
     justify-content: space-around;
-    margin: 15% 8% 0 8%;
+    margin: 15% 1% 0 1%;
 }
 .profil_name{
     display: flex;
     justify-content: space-around;
     font-size: 2rem;
-    margin: 30px 149px 0 149px;
+    margin: 2% 1% 0 1%;
+}
+.test{
+    width: 250px;
+    display: flex;
+    justify-content: center;
 }
 .btn_profiles{
     display: flex;
@@ -72,4 +77,32 @@ ul{
 }
 .btn_profiles:hover{
     border: 1px white solid;
+}
+.profil_nameSR{
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .profil_picture{
+        flex-direction: column;
+        align-items: center;
+    }
+    .profil_picture_2 , .profil_picture_3{
+        margin-top: 15%;
+    }
+    .profil_name{
+        display: none;
+    }
+    .profil_nameSR{
+        display: block;
+        margin-top: 5%;
+        font-size: 2em;
+    }
+    h1{
+        font-size: calc(40px + 3.3vw);
+    }
+    .place_btn{
+        margin-top: 15%;
+    }
 }
