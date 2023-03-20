@@ -88,3 +88,8 @@ main section div a:hover{
     transform: scale(1.1);
 }
 
+
+main
+{
+  /* background-image: url("../add_a_cool_background_here_and_uncomment.jpg"); */
+}
