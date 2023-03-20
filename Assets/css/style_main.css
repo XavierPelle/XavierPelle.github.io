@@ -292,8 +292,9 @@ body.dark .search-field i{
     }
 }
 
+
 /* <-----------------------------------la super nav de moi  --------------------------------------------> */
-/* html {
+ html {
     scroll-behavior: smooth;
     } */
     
@@ -366,4 +367,6 @@ body.dark .search-field i{
     display: none;
     }
     }
+
+
 
