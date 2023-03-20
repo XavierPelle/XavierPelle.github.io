@@ -11,6 +11,11 @@
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="./Assets/css/style_main.css" />
+		<!-- ===== Boxicons CSS ===== -->
+		<link
+			href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
 		<title>DIGIFLIX</title>
 	</head>
 
@@ -23,12 +28,23 @@
 		<!--En tête-->
 		<header>
 			<nav>
-				<div class="nav_gauche">
-					<div class="div_menu">
-						<ul>
-							<a href="./index.html"
-								><img src="./Assets/logo/logo_black.svg" alt="Logo Netflix"
-							/></a>
+				<div class="nav-bar">
+					<i class="bx bx-menu sidebarOpen"></i>
+					<span class="logo navLogo"
+						><a href="#"
+							><img src="./Assets/logo/logo_entier.svg" alt="Logo Netflix" /></a
+					></span>
+
+					<div class="menu">
+						<div class="logo-toggle">
+							<span class="logo"
+								><a href="#"
+									><img src="./Assets/icon/poulet.svg" alt="Logo Netflix" /></a
+							></span>
+							<i class="bx bx-x siderbarClose"></i>
+						</div>
+
+						<ul class="nav-links">
 							<li><a href="#">Accueil</a></li>
 							<li><a href="#">Séries TV</a></li>
 							<li><a href="#">Films</a></li>
@@ -37,46 +53,121 @@
 							<li><a href="#">Ma liste</a></li>
 						</ul>
 					</div>
-				</div>
-				<div class="nav_droite">
-					<div class="div_seach">
-						<a href="#"></a>
+
+					<div class="darkLight-searchBox">
+						<div class="dark-light">
+							<i class="bx bx-moon moon"></i>
+							<i class="bx bx-sun sun"></i>
+						</div>
+						<div class="dark-light">
+							<!-- <i class="bx bx-bell"></i>
+							<i class="bx bx-bell"></i> -->
+							<a href="#"><img src="./Assets/user.png" alt="user" /></a>
+						</div>
+
+						<div class="searchBox">
+							<div class="searchToggle">
+								<i class="bx bx-x cancel"></i>
+								<i class="bx bx-search search"></i>
+							</div>
+
+							<div class="search-field">
+								<input type="text" placeholder="Search..." />
+								<i class="bx bx-search"></i>
+							</div>
+						</div>
 					</div>
-					<div class="div_notification">
-						<a href="#"></a>
-					</div>
-					<div class="div_account"><a href="#">Mon compte</a></div>
 				</div>
 			</nav>
 		</header>
+
+		<!-- ------------------------------------------------------nav bar -------------------------- -->
 		<main>
-			<section class="Action movie-preview-scroller">
-				<h2>Action</h2>
-				<button class="rightController"></button>
-				<div class="affiche movie-preview-container">
-					<a href="#"><img src="./Assets/Action/Avatar.jpg" alt="" /></a>
-					<a href="#"
-					><img src="./Assets/Action/Avenger_InfinityWar.jpg" alt=""
-					/></a>
-					<a href="#"><img src="./Assets/Action/BlackAdam.jpg" alt="" /></a>
-					<a href="#"
-					><img src="./Assets/Action/BlackPanthere_wakandaForever.jpg" alt=""
-					/></a>
-					<a href="#"><img src="./Assets//Action/Creed2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/DemonSlayer.jpg" alt="" /></a>
-					<a href="#"
-					><img src="./Assets/Action/Detectiveknight_independ.jpg" alt=""
-					/></a>
-					<a href="#"><img src="./Assets/Action/JohnWick2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/Jung_e.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/JurassicWorld.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/LittleDixie.jpg" alt="" /></a>
-					<a href="#"
-					><img src="./Assets/Action/TopGun_Maverick.jpg" alt=""
-					/></a>
-				</div>
-				<button class="leftController"></button>
-			</section>
+			<h1 class="parallaxe">Le Parallaxe</h1>
+			<div class="test_image">
+				<img src="./Assets/CREED2.jpg" alt="" />
+			</div>
+			<div class="wrapper">
+				<section id="section1">
+					<a href="#section3" class="arrow__btn"><</a>
+					<div class="item">
+						<a href="#"
+							><img
+								src="./Assets/Action/BlackPanthere_wakandaForever.jpg"
+								alt=""
+						/></a>
+					</div>
+
+					<div class="item">
+						<a href="#"><img src="./Assets/Action/Avatar.jpg" alt="" /></a>
+					</div>
+
+					<div class="item">
+						<a href="#"
+							><img src="./Assets/Action/Avenger_InfinityWar.jpg" alt=""
+						/></a>
+					</div>
+
+					<div class="item">
+						<a href="#"><img src="./Assets/Action/JohnWick2.jpg" alt="" /></a>
+					</div>
+
+					<div class="item">
+						<a href="#"><img src="./Assets/Action/BlackAdam.jpg" alt="" /></a>
+					</div>
+					<a href="#section2" class="arrow__btn">></a>
+				</section>
+
+				<section id="section2">
+					<a href="#section1" class="arrow__btn"><</a>
+					<div class="item">
+						<img src="./Assets/Comedie/chatPotté2.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/Babylon.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/LesMinions2.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/Sonic2.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/Sonic2.jpg" />
+					</div>
+					<a href="#section3" class="arrow__btn">></a>
+				</section>
+
+				<section id="section3">
+					<a href="#section2" class="arrow__btn"><</a>
+					<div class="item">
+						<img src="./Assets/Horreur/Annabelle.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/exorcismOfGod.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/megan.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/Conjuring3.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/sansUnBruit2.jpg" />
+					</div>
+					<a href="#section1" class="arrow__btn">></a>
+				</section>
+			</div>
+
+			<!-- ----------------------	--------micheal le carousel  -------------------------------------------------------->
 
 			<div
 				id="carouselExampleCaptions"
@@ -153,24 +244,89 @@
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
+			<!-- ----------------------	--------micheal le carousel  -------------------------------------------------------->
 
-			<section class="Comedie movie-preview-scroller">
-				<button class="rightController"></button>
-				<h2>Comédie</h2>
-				<div class="affiche movie-preview-container">
-					<a href="#"><img src="./Assets/Comedie/AlerteRouge.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/Babylon.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/BulletTrain.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/CopSecret.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/LesMinions2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/chatPotté2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/Sonic2.jpg" alt="" /></a>
-					<a href="#"
-						><img src="./Assets/Comedie/THorLOveAndThunder.jpg" alt=""
-					/></a>
-				</div>
-				<button class="leftController"></button>
-			</section>
+			<div class="wrapper">
+				<section id="section1">
+					<a href="#section3" class="arrow__btn"><</a>
+					<div class="item">
+						<a href="#"
+							><img
+								src="./Assets/Action/BlackPanthere_wakandaForever.jpg"
+								alt=""
+						/></a>
+					</div>
+
+					<div class="item">
+						<a href="#"><img src="./Assets/Action/Avatar.jpg" alt="" /></a>
+					</div>
+
+					<div class="item">
+						<a href="#"
+							><img src="./Assets/Action/Avenger_InfinityWar.jpg" alt=""
+						/></a>
+					</div>
+
+					<div class="item">
+						<a href="#"><img src="./Assets/Action/JohnWick2.jpg" alt="" /></a>
+					</div>
+
+					<div class="item">
+						<a href="#"><img src="./Assets/Action/BlackAdam.jpg" alt="" /></a>
+					</div>
+					<a href="#section2" class="arrow__btn">></a>
+				</section>
+
+				<section id="section2">
+					<a href="#section1" class="arrow__btn"><</a>
+					<div class="item">
+						<img src="./Assets/Comedie/chatPotté2.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/Babylon.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/LesMinions2.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/Sonic2.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Comedie/Sonic2.jpg" />
+					</div>
+					<a href="#section3" class="arrow__btn">></a>
+				</section>
+
+				<section id="section3">
+					<a href="#section2" class="arrow__btn"><</a>
+					<div class="item">
+						<img src="./Assets/Horreur/Annabelle.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/exorcismOfGod.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/megan.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/Conjuring3.jpg" />
+					</div>
+
+					<div class="item">
+						<img src="./Assets/Horreur/sansUnBruit2.jpg" />
+					</div>
+					<a href="#section1" class="arrow__btn">></a>
+				</section>
+			</div>
 		</main>
+
+		<script src="./JS/script.js"></script>
 	</body>
 </html>

@@ -1,90 +1,369 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 *{
     margin: 0;
     padding: 0;
-    font-family: 'font0', Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-  }
-  body{
-    background-color: #1f1f1f;
-    color: #F3F3F3;
-  }
-  
- ul img{
-    height: 30px;
-   
-  }
-  
-  header{
-    background-color: #000000;
-    color: #F3F3F3;
-    padding: 20px 35px 10px 30px;
-  }
-  
-  nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  nav a{
-    text-decoration: none;
-    font-family: 'font0', Arial, Helvetica, sans-serif;
-    color: #fff;
-  }
-
-  .affiche{
-    overflow: hidden;
-  }
-
-  nav a:hover{
-    color: #E92125 ;
-  }
-  nav .nav_gauche{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  nav .nav_droite{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  nav .nav_gauche .div_menu ul{
-    list-style: none;
-  }
-  nav .nav_gauche .div_menu li{
-    display: inline-block;
-    margin-left: 15px;
-  }
-  nav .nav_droite div{
-    margin-left: 25px;
-  }
-  nav .nav_gauche .div_menu, nav .nav_droite{
-    margin-top: 5px;
-  }
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
 
 
-  main{
-    height: auto;
+/* ===== Colours ===== */
+:root{
+    --body-color: #191b20;
+    --nav-color: #000000;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+.parallaxe{
+    text-align: center;
+    padding-top: 40px;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+
+nav{
+    position: sticky;
+    /* top: 0;
+    left: 0; */
+    height: 70px;
     width: 100%;
-    padding: 50px 30px 10px 30px;
+    background-color: var(--nav-color);
+    /* z-index: 100; */
 }
-  main section{
-    padding: 50px 0px 30px 0px;
+
+nav img {
+    height: 80px;
 }
-  main section h2{
-    padding-bottom: 30px;
+
+body.dark nav{
+    border: 1px solid #393838;
+
 }
-main section div{
+
+nav .nav-bar{
+    position: relative;
+    /* height: 100%; */
+    /* max-width: 1000px; */
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
     display: flex;
-    overflow-x: auto;
+    align-items: center;
+    justify-content: space-between;
 }
-main section div a{
+
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.menu .logo-toggle{
+    display: none;
+}
+
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+ .nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.nav-links li:hover a{
+   color: red;
+}
+
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+.dark-light img {
+    height: 30px;
+}
+
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox{
+    position: relative;
+}
+
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.search-field input{
     height: 100%;
-    padding-left: 5px;
-    transition: transform 0.25s;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
 }
-main section div a:hover{
-    transform: scale(1.1);
+
+body.dark .search-field input{
+    color: var(--text-color);
 }
+
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+body.dark .search-field i{
+    color: var(--text-color);
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu{
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+/* <-----------------------------------la super nav de moi  --------------------------------------------> */
+/* html {
+    scroll-behavior: smooth;
+    } */
+    
+    /* body {
+    margin: 0;
+    background-color: #000;
+    }
+    
+    h1 {
+    font-family: Arial;
+    color: red;
+    text-align: center;
+    } */
+    
+    .test_image {
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+    }
+    .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding: 50px 50px;
+    }
+    .wrapper section {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    margin: 20px 0;
+    }
+    .wrapper section .item {
+    padding: 0 2px;
+    transition: 250ms all;
+    }
+    .wrapper section .item:hover {
+    margin: 0 40px;
+    transform: scale(1.2);
+    }
+    .wrapper section a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 6em;
+    background: black;
+    width: 80px; 
+     padding: 20px;
+    text-align: center;
+    z-index: 1;
+    }
+    .wrapper section a:nth-of-type(1) {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+    }
+    .wrapper section a:nth-of-type(2) {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
+    }
+  
+   
+    
+    @media only screen and (max-width: 600px) {
+    a.arrow__btn {
+    display: none;
+    }
+    }
 
