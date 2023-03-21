@@ -8,7 +8,8 @@ Forker le repository de Diginaflix.
 Créer une nouvelle branche pour vos modifications.
 Effectuer les modifications nécessaires.
 Effectuer une demande de fusion pour intégrer vos modifications à la branche principale du repository.
-Bug Reporting :
+
+ # Bug Reporting :
 Si vous trouvez un bogue dans Diginaflix, veuillez créer une nouvelle issue sur GitHub. Assurez-vous de fournir suffisamment d'informations pour que le bogue puisse être reproduit et corrigé.
 
  # Contacts :
