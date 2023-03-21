@@ -13,4 +13,4 @@ Si vous trouvez un bogue dans Diginaflix, veuillez créer une nouvelle issue sur
 
  # Contacts :
 
-Si vous avez des questions ou des préoccupations concernant Diginaflix, veuillez contacter notre équipe de support à l'adresse suivante : support@nDiginaflix.com.
+Si vous avez des questions ou des préoccupations concernant Diginaflix, veuillez contacter notre équipe de support à l'adresse suivante : support@Diginaflix.com.
