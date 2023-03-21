@@ -1,114 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Partie pour la page profils */
-body{
+body{   /* couleur de fond, couleur du texte et police par default */
     background-color: black;
     color: white;
     font-family: 'Montserrat', sans-serif;
 }
-a{
+a{  /* permet d'enlever le surlignement des liens et de les mettres en blanc */
     text-decoration: none;
     color: white;
 }
-.logo{
+.logo{  /* taille du logo  */
     max-width: 100px;
 }
-h1{
+h1{     /* mise en forme du h1 */
     font-size: 5em;
     display: flex;
     justify-content: center;
     margin-bottom: -5%;
 }
-ul{
+ul{     /* Mise en page des liste a puce et aucune puce */
     list-style: none;
     padding-inline-end: 40px;
 }
-.profil_picture_1{
+.profil_picture_1{  /* Taille et animation des images de profils */
     width  : 250px;
     height : 250px;
     transition: transform .2s;
 }
-.profil_picture_1:hover{
+.profil_picture_1:hover{     /* Animation des images de profils */
     transform: scale(1.2);
 }
-.profil_picture_2{
+.profil_picture_2{   /* Taille et animation des images de profils */
     width  : 250px;
     height : 250px;
     transition: transform .2s;
 }
-.profil_picture_2:hover{
+.profil_picture_2:hover{     /* Animation des images de profils */
     transform: scale(1.2);
 }
-.profil_picture_3{
+.profil_picture_3{   /* Taille et animation des images de profils */
     width  : 250px;
     height : 250px;
     transition: transform .2s;
 }
-.profil_picture_3:hover{
+.profil_picture_3:hover{     /* Animation des images de profils */
     transform: scale(1.2);
 }
 
-.profil_picture{
+.profil_picture{     /* Mise en forme de la liste a puce des images de profil */
     display: flex;
     justify-content: space-around;
     margin: 15% 1% 0 1%;
 }
-.profil_name{
+.profil_name{    /* Mise en forme de la liste a puce des noms */
     display: flex;
     justify-content: space-around;
     font-size: 2rem;
     margin: 2% 1% 0 1%;
 }
-.test{
+.name{  /* Center et donner une taille de chaque div */
     width: 250px;
     display: flex;
     justify-content: center;
 }
-.btn_profiles{
+.btn_profiles{  /* Mise en forme du boutton profile */
     display: flex;
     justify-content: center;
     font-size: 2em;
     width: 300px;
 }
-.place_btn{
+.place_btn{     /* Mise en page du boutton profile */
     display: flex;
     justify-content: center;
     margin-top: 5%;
 }
-.btn_profiles:hover{
+.btn_profiles:hover{    /* Animation de border du bouton profile */
     border: 1px white solid;
 }
-.profil_nameSR{
+.profil_nameSR{     /* Nom de profile caché en résolution pc */
     display: none;
 }
 
 
 @media screen and (max-width: 900px) {
-    .profil_picture{
+    .profil_picture{    /* Mise en place de la résolution tablette, telephone en mettant les images de profiles en colone*/
         flex-direction: column;
         align-items: center;
     }
-    .profil_picture_2 , .profil_picture_3{
+    .profil_picture_2 , .profil_picture_3{  /* Espace entre les images de profiles */
         margin-top: 15%;
     }
-    .profil_name{
+    .profil_name{   /* efface les anciens noms de profiles */
         display: none;
     }
-    .profil_nameSR{
+    .profil_nameSR{ /* Mise en forme des nouveaux noms de profile */
         display: block;
         margin-top: 5%;
         font-size: 2em;
     }
-    header
-    {
-        position: fixed;
-        inset: auto;
-        min-width: 100px;
-    }
     h1{
         font-size: calc(40px + 3.3vw);
     }
-    .place_btn{
+    .place_btn{ /* Mise en page du boutton gerer les profiles */
         margin-top: 15%;
     }
 }

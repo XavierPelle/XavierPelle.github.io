@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-*{
+*{          /* fond noir + police */
     background-color: black;
     font-family: 'Montserrat', sans-serif;
 }
-.full_logo{
+.full_logo{ /* espace en haut de la page */
     margin-top: -15%;
 }
-main{
+main{   /* Centrer le bouton bienvenue */
     display: flex;
     justify-content: center;
     margin-top: -8%;
 }
-a{
+a{      /* Mise en forme du button */
     color: white;
     background-color: #FF0000;
     text-decoration: none;
@@ -23,27 +23,27 @@ a{
     display: flex;
     justify-content: center;
 }
-a:hover{
+a:hover{    /* Animation du button au survol */
     transform: scale(1.2);
 }
-.short_logo{
+.short_logo{    /* cache le petit logo */
     display: none;
 }
 
 @media screen and (max-width: 900px) {
-    .short_logo{
-        display: block;
+    .short_logo{                /* Afficher le petit logo et de le rendre responsive */
+        display: block;         
         max-width: 50vw;
     }
-    .full_logo{
-        display: none;
+    .full_logo{                 /* Permet de cacher le gros logo */
+        display: none;          
     }
     a{
-        font-size: calc(40px + 3.3vw);
+        font-size: calc(40px + 3.3vw);      
     }
-    header{
+    header{                     /* Permet de center le petit logo et de lui laisser de la taille en haut et en bas*/
         display: flex;
-        justify-content: center;
+        justify-content: center;    
         margin-bottom: 15%;
         margin-top: 20%;
     }
