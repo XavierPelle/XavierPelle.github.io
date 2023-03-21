@@ -177,9 +177,9 @@ footer>div>:first-child>a
 
 footer.occupy-screen
 {
-    height: 70vh;
+    height: 50vh;
     /* margin-top: 0vh; */
-    transform: translateY(-20vh);
+    transform: translateY(-35vh);
 }
 
 /***** Responsive related **/
