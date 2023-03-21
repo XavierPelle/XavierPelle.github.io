@@ -1,171 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="./Assets/css/style_main.css" />
-		<title>DIGIFLIX</title>
-	</head>
-	<body>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-			crossorigin="anonymous"
-		></script>
-		<!--En tête-->
-		<header>
-			<nav>
-				<div class="nav_gauche">
-					<div class="div_menu">
-						<ul>
-							<a href="./index.html"
-								><img src="./Assets/logo/logo_black.svg" alt="Logo Netflix"
-							/></a>
-							<li><a href="#">Accueil</a></li>
-							<li><a href="#">Séries TV</a></li>
-							<li><a href="#">Films</a></li>
-							<li><a href="#">Programmes originaux</a></li>
-							<li><a href="#">Ajouts récents</a></li>
-							<li><a href="#">Ma liste</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="nav_droite">
-					<div class="div_seach">
-						<a href="#"></a>
-					</div>
-					<div class="div_notification">
-						<a href="#"></a>
-					</div>
-					<div class="div_account"><a href="#">Mon compte</a></div>
-				</div>
-			</nav>
-		</header>
-		<main>
-			<section class="Action">
-				<h2>Action</h2>
-				<div class="affiche">
-					<a href="#"><img src="./Assets/Action/Avatar.jpg" alt="" /></a>
-					<a href="#"
-						><img src="./Assets/Action/Avenger_InfinityWar.jpg" alt=""
-					/></a>
-					<a href="#"><img src="./Assets/Action/BlackAdam.jpg" alt="" /></a>
-					<a href="#"
-						><img src="./Assets/Action/BlackPanthere_wakandaForever.jpg" alt=""
-					/></a>
-					<a href="#"><img src="./Assets//Action/Creed2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/DemonSlayer.jpg" alt="" /></a>
-					<a href="#"
-						><img src="./Assets/Action/Detectiveknight_independ.jpg" alt=""
-					/></a>
-					<a href="#"><img src="./Assets/Action/JohnWick2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/Jung_e.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/JurassicWorld.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Action/LittleDixie.jpg" alt="" /></a>
-					<a href="#"
-						><img src="./Assets/Action/TopGun_Maverick.jpg" alt=""
-					/></a>
-				</div>
-			</section>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="./JS/mouse_chaser.js" defer></script>
+        <link rel="stylesheet" href="./Assets/css/new_style.css"/>
+        <link rel="shortcut icon" href="./Assets/favicon/icons8-retro-tv-16.png" type="image/x-icon">
+        <script src="./JS/js_parallax.js" defer></script>
+        <title>Diginaflix</title>
+    </head>
 
-			<div
-				id="carouselExampleCaptions"
-				class="carousel slide"
-				data-bs-ride="carousel"
-			>
-				<div class="carousel-indicators">
-					<button
-						type="button"
-						data-bs-target="#carouselExampleCaptions"
-						data-bs-slide-to="0"
-						class="active"
-						aria-current="true"
-						aria-label="Slide 1"
-					></button>
-					<button
-						type="button"
-						data-bs-target="#carouselExampleCaptions"
-						data-bs-slide-to="1"
-						aria-label="Slide 2"
-					></button>
-					<button
-						type="button"
-						data-bs-target="#carouselExampleCaptions"
-						data-bs-slide-to="2"
-						aria-label="Slide 3"
-					></button>
-				</div>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img src="./Assets/CREED2.jpg" class="d-block w-100" alt="..." />
-						<div class="carousel-caption d-none d-md-block">
-							<h5>First slide label</h5>
-							<p>
-								Some representative placeholder content for the first slide.
-							</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img src="./Assets/CREED2.jpg" class="d-block w-100" alt="..." />
-						<div class="carousel-caption d-none d-md-block">
-							<h5>Second slide label</h5>
-							<p>
-								Some representative placeholder content for the second slide.
-							</p>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img src="./Assets/CREED2.jpg" class="d-block w-100" alt="..." />
-						<div class="carousel-caption d-none d-md-block">
-							<h5>Third slide label</h5>
-							<p>
-								Some representative placeholder content for the third slide.
-							</p>
-						</div>
-					</div>
-				</div>
-				<button
-					class="carousel-control-prev"
-					type="button"
-					data-bs-target="#carouselExampleCaptions"
-					data-bs-slide="prev"
-				>
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button
-					class="carousel-control-next"
-					type="button"
-					data-bs-target="#carouselExampleCaptions"
-					data-bs-slide="next"
-				>
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
-			</div>
+<body>
+    <header>
+        <a href="./main.html"><img src="./Assets/logo/logo-treated.svg" alt="Logo Diginaflix" id="logo"></a>
+        <a href="" id="accueil">Accueil</a>
+        <div>
+            <a href="#">Films</a>
+            <a href="#">Séries</a>
+            <a href="#">Programmes Originaux</a>
+            <a href="#">Ajouts Récents</a>
+            <a href="#">Ma Liste</a>
+        </div>
+        <button><a href="#">Catégories</a></button>
+        <img src="./Assets/icon/superhero.svg" alt="Account">
+    </header>
 
-			<section class="Comedie">
-				<h2>Comédie</h2>
-				<div class="affiche">
-					<a href="#"><img src="./Assets/Comedie/AlerteRouge.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/Babylon.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/BulletTrain.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/CopSecret.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/LesMinions2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/chatPotté2.jpg" alt="" /></a>
-					<a href="#"><img src="./Assets/Comedie/Sonic2.jpg" alt="" /></a>
-					<a href="#"
-						><img src="./Assets/Comedie/THorLOveAndThunder.jpg" alt=""
-					/></a>
-				</div>
-			</section>
-		</main>
-	</body>
+    <img src="./Assets/cursor/icons8-bobine-de-film.png" alt="">
+
+    <main>
+        <section>
+            <img id="preview-dim-ref" src="./Assets/action/Avatar.jpg" alt="">
+            <img src="./Assets/action/Avenger_InfinityWar.jpg" alt="">
+            <img src="./Assets/action/BlackAdam.jpg" alt="">
+            <img src="./Assets/action/BlackPanthere_wakandaForever.jpg" alt="">
+            <img src="./Assets/action/Creed2.jpg" alt="">
+            <img src="./Assets/action/DemonSlayer.jpg" alt="">
+            <img src="./Assets/action/Detectiveknight_independ.jpg" alt="">
+            <img src="./Assets/action/JohnWick2.jpg" alt="">
+            <img src="./Assets/action/Jung_e.jpg" alt="">
+            <img src="./Assets/action/JurassicWorld.jpg" alt="">
+            <img src="./Assets/action/LittleDixie.jpg" alt="">
+            <img src="./Assets/action/Mayday.jpg" alt="">
+            <img src="./Assets/action/Prey.jpg" alt="">
+            <img src="./Assets/action/Spider-Man_noWayHome.jpg" alt="">
+            <img src="./Assets/action/TopGun_Maverick.jpg" alt="">
+            <img src="./Assets/action/Troll.jpg" alt="">
+        </section>
+
+        <section></section>
+
+        <section>
+            <img src="./Assets/Comedie/AlerteRouge.jpg" alt="">
+            <img src="./Assets/Comedie/Babylon.jpg" alt="">
+            <img src="./Assets/Comedie/BulletTrain.jpg" alt="">
+            <img src="./Assets/Comedie/CopSecret.jpg" alt="">
+            <img src="./Assets/Comedie/LesMinions2.jpg" alt="">
+            <img src="./Assets/Comedie/chatPotté2.jpg" alt="">
+            <img src="./Assets/Comedie/Sonic2.jpg" alt="">
+            <img src="./Assets/Comedie/THorLOveAndThunder.jpg" alt="">
+        </section>
+        
+        <section>
+            <img id="preview-dim-ref" src="./Assets/Horreur/Annabelle.jpg" alt="">
+            <img src="./Assets/Horreur/Conjuring3.jpg" alt="">
+            <img src="./Assets/Horreur/exorcismOfGod.jpg" alt="">
+            <img src="./Assets/Horreur/HellRaizer.jpg" alt="">
+            <img src="./Assets/Horreur/knockAtTheCabin.jpg" alt="">
+            <img src="./Assets/Horreur/L'empriseDuDemon.jpg" alt="">
+            <img src="./Assets/Horreur/lePrixAPayer.jpg" alt="">
+            <img src="./Assets/Horreur/LesEnfantsSontBizarre.jpg" alt="">
+            <img src="./Assets/Horreur/megan.jpg" alt="">
+            <img src="./Assets/Horreur/ResidentEvil.jpg" alt="">
+            <img src="./Assets/Horreur/sansUnBruit2.jpg" alt="">
+            <img src="./Assets/Horreur/scream2.jpg" alt="">
+            <img src="./Assets/Horreur/Scream.jpg" alt="">
+            <img src="./Assets/Horreur/Smile.jpg" alt="">
+            <img src="./Assets/Horreur/TheLair.jpg" alt="">
+            <img src="./Assets/Horreur/VikingWolf.jpg" alt="">
+            <img src="./Assets/Horreur/X.jpg" alt="">
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <section>
+                <a href="https://icons8.com">Icons from icons8.com.</a>
+                <img src="./Assets/icon/icons8-watch-tv.svg" alt="">
+            </section>
+            <section>
+                <h3>Company</h3>
+                <a href="#">How it works</a>
+                <a href="#">Pricing</a>
+                <a href="#">Demo</a>
+            </section>
+            <section>
+                <h3>Ressources</h3>
+                <a href="#">Blog Title 1</a>
+                <a href="#">Blog Title 2</a>
+                <a href="#">Blog Title 3</a>
+                <a href="#">See All Ressources</a>
+            </section>
+            <section>
+                <h3>About</h3>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </section>
+        </div>
+        <p>Copyright © 2023 Diginafilx</p>
+    </footer>
+</body>
+
 </html>

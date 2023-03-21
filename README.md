@@ -1,1 +1,1 @@
-# Qui souhaite s'occuper du readme, où on peut éventuellement mettre la (petite et symbolique) documentation pour 
+# Qui souhaite s'occuper du readme ? on peut éventuellement mettre la (petite et symbolique) documentation ici.

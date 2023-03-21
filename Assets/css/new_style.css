@@ -1,0 +1,226 @@
+/***** Global *****/
+html
+{
+    background-color: #101016;
+}
+
+*
+{
+    color: #fff;
+    font-size: calc(0.8vw + 0.8rem);
+}
+
+a
+{
+    text-decoration: unset;
+}
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+body>img
+{
+    position: fixed;
+    display: none;
+    z-index: 2;
+    height: 50px;
+}
+
+
+/***** Header *****/
+
+header > *:first-child > img
+{
+    height: calc(5vh + 2rem);
+    margin-bottom: 0.5rem;
+    margin-top: -0.1rem;
+}
+
+header
+{
+    display: flex;
+    padding: 0 5vh;
+    padding-top: 2vh;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgb(122, 16, 5) 0px 6px 6px;
+    background-color: #101016;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header>div>*
+{
+    margin: 0 0.9vh;
+}
+
+
+header>img
+{
+    width: calc(4vmin + 20px);
+}
+
+header>button
+{
+    background-color: #101016;
+    border-style: unset;
+}
+
+
+/***** Main *****/
+
+main
+{
+    gap: 10vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+main>section>img
+{
+    cursor: none;
+}
+
+
+main>section:not(:nth-child(2))
+{
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+main>section:first-child
+{
+    transition: transform 1s;
+}
+
+
+/***** Footer *****/
+
+
+footer
+{
+    margin-top: -26vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer>div
+{
+    display: flex;
+    padding: 2rem 6rem;
+    padding-bottom: 0.6rem;
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-self: stretch;
+}
+
+
+footer img
+{
+    margin-left: -1rem;
+    margin-top: 1rem;
+}
+
+
+footer>div>section>a
+{
+    display: block;
+}
+
+
+footer>div>:first-child>a
+{
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+
+/***** Responsive related **/
+
+header>button
+{
+    display: none;
+}
+
+
+@media screen and (max-width: 1150px)
+{
+    header>div
+    {
+        display: none;
+    }
+
+    header>button
+    {
+        display: block;
+    }
+    footer>div
+    {
+        padding: 2rem 5rem;
+    }
+}
+
+@media screen and (max-width: 1050px)
+{
+    footer>div
+    {
+        padding: 2rem 1.5rem;
+    }
+}
+
+
+@media screen and (max-width: 450px)
+{
+    header>a:nth-child(2)
+    {
+        display: none;
+    }
+    header
+    {
+        padding: 0 2vh;
+        padding-top: 1vh;
+    }
+    footer>div>img
+    {
+        display: none;
+    }
+    footer>div>*
+    {
+        width: 40%;
+    }
+    footer>div
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 4vh;
+    }
+}
+
+
+
+@media screen and (max-width: 500px)
+{
+    footer>div>*
+    {
+        width: 40%;
+    }
+    footer>div
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
+    }
+}
+

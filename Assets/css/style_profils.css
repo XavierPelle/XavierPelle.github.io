@@ -98,7 +98,7 @@ ul{     /* Mise en page des liste a puce et aucune puce */
         margin-top: 5%;
         font-size: 2em;
     }
-    h1{     /* taille du h1 responsive */
+    h1{
         font-size: calc(40px + 3.3vw);
     }
     .place_btn{ /* Mise en page du boutton gerer les profiles */
