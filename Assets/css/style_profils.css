@@ -10,7 +10,8 @@ a{
     color: white;
 }
 .logo{  
-    max-width: 100px;
+    max-width: 250px;
+    margin-top: -2%;
 }
 h1{     
     font-size: 5em;
@@ -110,5 +111,13 @@ ul{
     }
     .place_btn{ 
         margin-top: 15%;
+    }
+    header{
+        display: flex;
+        justify-content: center;
+        margin-top: -6%;
+    }
+    .logo{
+        width: 250px;
     }
 }
