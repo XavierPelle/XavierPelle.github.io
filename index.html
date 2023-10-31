@@ -5,16 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <script src="./src/main.js" defer></script>
-    <title>Document</title>
+    <script src="./src/command.js" defer></script>
+    <script src="./src/close.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="icon" href="./src/icon.png" type="image/x-icon">    
+    <title>Xavier Pelle</title>
 </head>
-    <body class="flex items-center justify-center h-screen bg-gradient-to-br from-slate-700 to-cyan-900" >
-        <div id="cli" class="text-green-600 rounded-md w-3/5 h-3/5 bg-slate-950 overflow-auto">
+    <body class="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-slate-700 to-cyan-900">
+        <div class="flex flex-col cursor-pointer" id="logoConsole">
+            <img class=" w-16 h-16" src="./src/iconConsole.png" alt="">
+            <p class="flex flex-col items-center">WSL</p>
+        </div>
+        <div id="commandLine" class="hidden w-3/5 h-3/5" >
+        <div id="cli2" class="flex bg-slate-800 w-full h-10">
+            <div>
+                <img class="mt-2 ml-2 w-6 h-6" src="./src/icon2.png" alt="">
+            </div>
+            <div class="mt-3 ml-2 text-xs text-gray-50">
+                Xavier㉿Pelle -[~]
+            </div>
+            <div id='close' class="mt-2 mb-1 ml-5 text-base text-gray-50 hover:bg-zinc-700 hover:cursor-pointer rounded-full">
+                &nbsp;&nbsp;✕&nbsp;&nbsp;
+            </div>
+        </div>
+        <div id="cli" class="text-green-600 w-full h-full bg-slate-950 overflow-auto">
             <div class="text-green-600">
                 <p id="test" class="text-blue-600">
                     ┌──(Xavier㉿Pelle)-[~] <br>
                     └─$ <input autofocus id="command" class="text-green-600 bg-slate-950 outline-none w-4/5" type="text"></p>
             </div>
         </div>
+    </div>
     </body>
 </html>
 
