@@ -5,6 +5,9 @@
     --primary: rgba(0, 0, 0, 0);
     --secondary: rgba(4, 154, 102, 0.602);
   }
+body{
+  overflow: hidden;
+}
 * {
     scrollbar-width: thin;
     scrollbar-color: var(--secondary) var(--primary);
