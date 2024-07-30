@@ -66,7 +66,7 @@ const pwdCommand = () => {
 
 const bioCommand = () => {
     const bio = document.createElement("p");
-    bio.innerHTML = "Pas encore disponible";
+    bio.innerHTML = "J'ai découvert le développement il y a 2 ans lors de mon bootcamp chez The Hacking Project, où j'ai pu acquérir des bases solides et développer ma passion pour le code. J'ai continué sur la formation de développeur web et web mobile et j'ai obtenu le diplôme ! Je suis aujourd'hui à la recherche d'opportunités pour rejoindre une équipe dynamique où je pourrai continuer à apprendre et contribuer à des projets innovants. ";
     return bio;
 }
 
