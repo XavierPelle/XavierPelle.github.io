@@ -1,0 +1,292 @@
+/* Direction : carnet technique / fiche d'intervention imprimée.
+   Papier chaud, encre noire, un seul accent (orange signal), règles fines,
+   angles droits, serif éditorial + monospace pour les données. Aucun dégradé. */
+
+@font-face{font-family:Fraunces;src:url(fonts/fraunces-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Fraunces;src:url(fonts/fraunces-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:Fraunces;src:url(fonts/fraunces-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-sans-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url(fonts/instrument-sans-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+
+:root{
+  --paper:#f1ece1; --ink:#16150f; --mut:#6b6659; --rule:#16150f; --faint:#cfc8b8;
+  --signal:#d9480f;
+  /* couleurs du décor (le SVG les lit via var()) + socle (bas de l'accueil, contact, pied de page) */
+  --line:#16150f; --socle:#16150f; --on-socle:#f1ece1; --on-socle-rgb:241,236,225;
+  --t0:#e9e3d4; --t1:#e7e0d0; --t2:#ddd4c1; --t3:#cec3ac; --t4:#b9ac92;
+  --serif:Fraunces,Georgia,serif; --sans:"Instrument Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:18px/1.6 var(--sans)}
+a{color:inherit}
+::selection{background:var(--signal);color:var(--paper)}
+
+/* barre du haut */
+.top{display:flex;justify-content:space-between;align-items:baseline;padding:18px var(--pad);border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:5}
+.mark{font-family:var(--serif);font-weight:600;font-size:1.15rem;text-decoration:none}
+.top nav{display:flex;gap:28px;font:500 .8rem var(--mono);text-transform:uppercase;letter-spacing:.06em}
+.top nav a{text-decoration:none;padding-bottom:2px;border-bottom:2px solid transparent}
+.top nav a:hover{border-color:var(--signal)}
+
+main{padding:0 var(--pad)}
+section{padding:clamp(56px,9vw,110px) 0;border-bottom:1px solid var(--rule)}
+.meta,.num,.stack,dt,th,.st,footer{font-family:var(--mono)}
+
+/* accueil */
+.hero{padding-top:clamp(48px,8vw,100px)}
+.meta{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:28px}
+.meta::before{content:"";display:inline-block;width:9px;height:9px;background:var(--signal);margin-right:10px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(2.4rem,7.2vw,5.6rem);line-height:1.02;letter-spacing:-.025em;max-width:15ch}
+h1 em{font-weight:400;font-style:italic;color:var(--signal)}
+.fiche{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:clamp(36px,6vw,64px) 0 28px;border-top:1px solid var(--rule)}
+.fiche>div{padding:14px 18px 14px 0;border-bottom:1px solid var(--faint)}
+dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+dd{font-weight:600;margin-top:2px}
+.intro{max-width:46ch;color:var(--ink)}
+
+/* titres de section */
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:-.015em;display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(28px,4vw,48px)}
+.num{font-weight:500;font-size:.8rem;color:var(--signal);letter-spacing:.04em}
+
+/* offre : lignes, pas des cartes */
+.rows{list-style:none}
+.rows li{display:grid;grid-template-columns:minmax(150px,1fr) 2.4fr minmax(140px,1fr);gap:8px 40px;align-items:baseline;padding:26px 0;border-top:1px solid var(--rule)}
+.rows li:last-child{padding-bottom:0}
+.rows h3{font-family:var(--serif);font-size:1.45rem;font-weight:600}
+.rows p{max-width:56ch}
+.stack{font-size:.76rem;color:var(--mut);text-align:right}
+
+/* projets : registre */
+.log{width:100%;border-collapse:collapse}
+th{font-size:.72rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);text-align:left;padding:0 12px 10px 0;border-bottom:1px solid var(--rule)}
+td{padding:18px 12px 18px 0;border-bottom:1px solid var(--faint);vertical-align:baseline}
+td:first-child{font:500 .85rem var(--mono);color:var(--signal);white-space:nowrap}
+td small{color:var(--mut);font-size:.88rem}
+.st{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);white-space:nowrap}
+tbody tr:hover td{background:rgba(217,72,15,.06)}
+
+/* méthode */
+.steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid var(--rule)}
+.steps li{counter-increment:s;padding:20px 24px 8px 0;color:var(--mut)}
+.steps li+li{padding-left:24px;border-left:1px solid var(--faint)}
+.steps li::before{content:"0" counter(s);display:block;font:500 .8rem var(--mono);color:var(--signal);margin-bottom:12px}
+.steps b{display:block;font:600 1.3rem var(--serif);color:var(--ink);margin-bottom:6px}
+
+/* contact */
+.contact{border-bottom:0}
+.contact p{margin-bottom:10px;color:var(--mut)}
+.mail{display:inline-block;font:600 clamp(1.5rem,5vw,3.4rem)/1.1 var(--serif);letter-spacing:-.02em;text-decoration:none;border-bottom:3px solid var(--signal);padding-bottom:4px;transition:color .15s}
+.mail:hover{color:var(--signal)}
+
+footer{display:flex;justify-content:space-between;padding:20px var(--pad);border-top:1px solid var(--rule);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mut)}
+
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+
+@media(max-width:760px){
+  .top nav{gap:14px;font-size:.7rem}
+  .rows li{grid-template-columns:1fr}
+  .stack{text-align:left}
+  .steps li+li{padding-left:0;border-left:0;border-top:1px solid var(--faint)}
+  th:nth-child(3),td:nth-child(3){display:none}
+}
+
+/* ===== Parallaxe « coupe de terrain » =====
+   Seuls les calques décoratifs bougent (transform, GPU). Le texte reste dans le flux, immobile. */
+.top{z-index:20}
+section{position:relative;overflow:hidden}
+section>*:not(.bgnum):not(.scene):not(.deco){position:relative;z-index:1}
+
+/* accueil : texte / relief / fiche posée sur le socle d'encre — pleine largeur */
+.hero{position:relative;overflow:hidden;min-height:calc(100svh - 62px);display:flex;flex-direction:column;
+  margin:0 calc(-1 * var(--pad));padding:clamp(36px,6vh,80px) var(--pad) 0;border-bottom:0}
+section.hero>.hero-text{max-width:min(100%,980px);z-index:3}
+.intro{margin-top:clamp(20px,3vw,32px)}
+.scene{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.layer{position:absolute;left:-3%;width:106%;top:0;height:100%;overflow:visible;will-change:transform;display:block}
+/* le relief vit dans sa propre boîte, SOUS le titre (dans le flux) : il ne peut jamais remonter sur le texte */
+section.hero>.terrain{position:relative;z-index:1;flex:1 0 clamp(200px,24vw,420px);margin:clamp(16px,2.5vw,40px) calc(-1 * var(--pad)) 0;pointer-events:none;overflow:hidden}
+.terrain .layer{top:0;height:100%}
+.terrain .ridge{position:absolute;inset:0;width:100%;height:100%;display:block}
+.terrain .flag{position:absolute;width:30px;height:60px;margin:0 0 -3px -4.5px;overflow:visible}
+.hero>.socle{margin:0 calc(-1 * var(--pad));padding:6px var(--pad) clamp(22px,3.4vw,40px);background:var(--socle);color:var(--on-socle);
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr);gap:12px clamp(28px,5vw,80px);align-items:start}
+.hero .intro{margin:0;color:rgba(var(--on-socle-rgb),.85);max-width:44ch;padding-top:12px;border-top:1px solid var(--signal)}
+.hero .fiche{margin:0;border-top:0;grid-template-columns:repeat(3,minmax(0,1fr))}
+.hero .fiche>div{border-bottom:0;border-top:1px solid rgba(var(--on-socle-rgb),.3);padding:12px 14px 0 0}
+.hero .fiche dt{color:rgba(var(--on-socle-rgb),.6)}
+
+/* chiffres de section en contour, plan lointain */
+.bgnum{position:absolute;z-index:0;right:-1vw;top:-6%;font:600 clamp(9rem,28vw,24rem)/1 var(--serif);color:transparent;
+  -webkit-text-stroke:1px rgba(22,21,15,.2);pointer-events:none;will-change:transform}
+
+/* bandes de strates entre les sections */
+.band{position:relative;overflow:hidden;height:clamp(220px,30vw,380px);margin:0 calc(-1 * var(--pad))}
+.band+section{border-top:0}
+#offre{border-bottom:0}#methode{border-bottom:0}
+
+/* socle : le contact au fond de la coupe, en encre */
+.contact{background:var(--socle);color:var(--on-socle);margin:0 calc(-1 * var(--pad));padding-left:var(--pad);padding-right:var(--pad);border:0}
+.contact p{color:rgba(var(--on-socle-rgb),.62)}
+.contact .mail:hover{color:var(--signal)}
+.contact .bgnum{-webkit-text-stroke:1px rgba(var(--on-socle-rgb),.16)}
+footer{background:var(--socle);color:rgba(var(--on-socle-rgb),.55);border-top:1px solid rgba(var(--on-socle-rgb),.2)}
+.contact :focus-visible{outline-color:var(--signal)}
+
+/* jauge de profondeur (ordinateur) */
+.gauge{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:15;display:flex;flex-direction:column;align-items:center;gap:10px;
+  font:500 .66rem var(--mono);letter-spacing:.06em;color:var(--mut);transition:color .3s}
+.gauge.on-ink{color:rgba(var(--on-socle-rgb),.6)}.gauge.on-ink .gauge-line{background:rgba(var(--on-socle-rgb),.25)}.gauge.on-ink .gauge-line::before,.gauge.on-ink .gauge-line::after{background:var(--on-socle)}
+.gauge-line{position:relative;width:1px;height:26vh;background:var(--faint)}
+.gauge-line i{position:absolute;inset:0;background:var(--signal);transform-origin:top;transform:scaleY(0)}
+.gauge-line::before,.gauge-line::after{content:"";position:absolute;left:-4px;width:9px;height:1px;background:var(--ink)}
+.gauge-line::before{top:0}.gauge-line::after{bottom:0}
+.gauge-val{writing-mode:vertical-rl;font-variant-numeric:tabular-nums}
+
+@media(max-width:1100px){.gauge{display:none}}
+@media(max-width:760px){
+  .hero{min-height:calc(100svh - 56px);padding-top:40px}
+  .hero>.socle{grid-template-columns:1fr}
+  .hero .fiche{grid-template-columns:1fr}
+  .hero .fiche>div{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0}
+  .layer{left:-8%;width:116%}
+  .reticle{display:none}
+  .band{height:200px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Parallaxe dans chaque section : une strate par section, un peu plus profonde à chaque fois ===== */
+:root{--s1:#f1ece1;--s2:#ebe4d5;--s3:#e2dac8}
+main>section:not(.hero){margin:0 calc(-1 * var(--pad));padding-left:var(--pad);padding-right:var(--pad);border-bottom:0}
+#offre{background:var(--s1)} #projets{background:var(--s2)} #methode{background:var(--s3)}
+.band-top{background:var(--s1)} .band-mid{background:var(--s2)} .band-deep{background:var(--s3)}
+.deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;color:var(--line)}
+.deco .layer{position:absolute;left:0;width:100%;top:-12%;height:124%;overflow:visible}
+.deco .m{position:absolute;height:auto;display:block;will-change:transform}
+/* intensité : assez visible pour lire la profondeur, assez légère pour ne pas gêner le texte */
+#offre .deco{opacity:.42}
+#offre{padding-bottom:clamp(110px,12vw,170px)} #projets .deco{opacity:.3} #methode .deco{opacity:.38}
+.contact .deco{color:var(--on-socle);opacity:.55}
+.contact .m-vein{opacity:.9}
+.deco .near{opacity:.8}
+.bgnum{z-index:0}
+#projets .log{background:var(--s2);box-shadow:0 0 0 14px var(--s2)}
+#methode .steps{background:var(--s3);box-shadow:0 0 0 14px var(--s3)}
+tbody tr:hover td{background:rgba(217,72,15,.07)}
+@media(max-width:760px){
+  .deco .near{display:none}
+  .m-topo{width:420px!important;right:-180px!important;top:4%!important}
+  .m-net{width:900px!important;left:-200px!important}
+  .m-sed{width:900px!important;left:-120px!important;top:30%!important}
+  .m-spark{width:900px!important}
+  .m-vein{width:900px!important;left:-200px!important}
+  .m-geode{width:230px!important;right:-120px!important;top:auto!important;bottom:-60px}
+  .contact .deco{opacity:.4}
+  .m-peb{width:800px!important}
+  #offre .deco{opacity:.32}
+}
+
+/* ===== Correctifs : titres cachés sous l'en-tête, en-tête sur 2 lignes en mobile ===== */
+section[id]{scroll-margin-top:var(--head,64px)}
+.top{flex-wrap:nowrap;gap:16px}
+.mark{white-space:nowrap}
+@media(max-width:760px){
+  :root{--head:52px}
+  .top{padding:14px var(--pad);align-items:center}
+  .mark{font-size:1rem}
+  .top nav{gap:12px;font-size:.66rem;letter-spacing:.03em}
+  section.hero>.terrain{margin-top:16px}
+}
+@media(max-width:380px){
+  .mark{font-size:.92rem}
+  .top nav{gap:9px;font-size:.6rem;letter-spacing:.02em}
+}
+/* mobile : un motif bien lisible par section, placé dans les marges libres */
+@media(max-width:760px){
+  #offre .deco,#projets .deco,#methode .deco{opacity:.5}
+  .m-net,.m-sed,.m-peb{opacity:.6}
+  .m-cable{width:150px!important;right:-40px!important;bottom:-30px!important}
+  .m-fossil{width:170px!important;left:auto!important;right:-30px!important;bottom:10px!important}
+  #projets,#methode{padding-bottom:150px}
+}
+
+/* viseur décoratif : seulement quand il y a la place à droite du titre */
+.scene .reticle{position:absolute;right:calc(var(--pad) + 2%);top:clamp(90px,16vh,190px);width:clamp(190px,15vw,280px);height:auto;overflow:visible;will-change:transform}
+@media(max-width:1279px){.reticle{display:none}}
+
+/* entrée : les plans du relief montent l'un après l'autre (le lointain d'abord) — le texte, lui, ne bouge pas */
+@media(prefers-reduced-motion:no-preference){
+  .terrain .ridge,.terrain .flag{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+  .terrain .l1 .ridge{animation-delay:.05s}.terrain .l2 .ridge{animation-delay:.18s}
+  .terrain .l3 .ridge,.terrain .l3 .flag{animation-delay:.31s}.terrain .l4 .ridge{animation-delay:.44s}
+  .terrain .l5 .ridge{animation:none}
+  .terrain .flag{animation-name:rise-flag;animation-delay:.9s}
+  @keyframes rise{from{transform:translateY(38%)}to{transform:none}}
+  @keyframes rise-flag{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+}
+
+/* ===== Mode nuit : même relevé, lu à la lampe. Encre chaude, pas de noir pur ni de bleu.
+   Le lointain est un peu plus clair (brume), le premier plan et le socle sont les plus sombres. ===== */
+:root[data-theme="dark"]{
+  --paper:#16150f; --ink:#ebe5d6; --mut:#9d9683; --rule:#4f4a3d; --faint:#302d24;
+  --signal:#f0612a;
+  --line:#e6dfcd; --socle:#0b0a07; --on-socle:#ebe5d6; --on-socle-rgb:235,229,214;
+  --t0:#2c2a21; --t1:#29271e; --t2:#24221a; --t3:#1f1d16; --t4:#191812;
+  --s1:#16150f; --s2:#13120d; --s3:#100f0b;
+  color-scheme:dark;
+}
+:root[data-theme="dark"] .scene .layer.sky{opacity:.55}
+:root[data-theme="dark"] #offre .deco{opacity:.3} :root[data-theme="dark"] #projets .deco{opacity:.24}
+:root[data-theme="dark"] #methode .deco{opacity:.28} :root[data-theme="dark"] .contact .deco{opacity:.4}
+:root[data-theme="dark"] tbody tr:hover td{background:rgba(240,97,42,.1)}
+
+/* bouton jour / nuit */
+.theme{font:500 .7rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--ink);background:none;
+  border:1px solid var(--rule);padding:4px 8px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.theme::before{content:"";width:8px;height:8px;background:var(--signal)}
+.theme:hover{border-color:var(--signal)}
+.top-r{display:flex;align-items:center;gap:clamp(12px,2.4vw,28px)}
+body,.top,section,.band,footer,.contact,.socle{transition:background-color .35s,color .35s}
+/* mobile : le bouton se réduit à son carré (libellé lu par aria-label) */
+@media(max-width:760px){.theme span{display:none}.theme{padding:0;width:24px;height:24px;justify-content:center;flex:none}
+  .theme::before{width:8px;height:8px}.top-r{gap:10px}}
+:root[data-theme="dark"] .terrain .l1{--line:#6f6a5b}:root[data-theme="dark"] .terrain .l2{--line:#948d7a}
+:root[data-theme="dark"] .terrain .l3{--line:#b8b09b}:root[data-theme="dark"] .terrain .l4{--line:#d6cfbc}
+:root[data-theme="dark"] .band .b1{--line:#5a5547}:root[data-theme="dark"] .band .b2{--line:#77715f}
+:root[data-theme="dark"] .band .b3{--line:#968f7b}:root[data-theme="dark"] .band .b4{--line:#b8b09b}
+:root[data-theme="dark"] .band .b5{--line:#d6cfbc}
+
+/* en-tête : le soulignement des onglets ne prend plus de place (il décalait les onglets de 2 px vers le haut) */
+.top{align-items:center}
+.top nav{align-items:center;line-height:1}
+.top nav a{position:relative;padding:0;border:0;line-height:1}
+.top nav a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--signal);transform:scaleX(0);transition:transform .15s}
+.top nav a:hover::after,.top nav a:focus-visible::after{transform:scaleX(1)}
+.theme{line-height:1}
+
+/* titre plus long (« Le service informatique que votre entreprise n'a pas. ») : 3 lignes équilibrées sur ordinateur */
+h1{max-width:21ch;text-wrap:balance;font-size:clamp(2.15rem,6.2vw,5.2rem)}
+
+/* exemples concrets : un par ligne (pas de coupure au milieu d'un exemple) */
+.stack span{display:block;white-space:nowrap;line-height:1.7}
+@media(max-width:760px){.stack span{display:inline;white-space:normal}.stack span+span::before{content:" · "}}
+/* étiquettes posées sur la carte : un fond papier pour rester lisibles au-dessus des courbes */
+.rows .stack{justify-self:end;background:var(--s1);box-shadow:0 0 0 6px var(--s1)}
+@media(max-width:760px){.rows .stack{justify-self:start}}
+
+/* ===== Page mentions légales : sobre, même charte ===== */
+footer a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+footer a:hover{color:var(--signal)}
+.legal{max-width:760px;padding-top:clamp(40px,7vw,80px);padding-bottom:clamp(40px,7vw,80px)}
+.legal h1{font-size:clamp(2.2rem,6vw,3.6rem);max-width:none;margin-bottom:clamp(24px,4vw,40px)}
+.legal section{padding:clamp(28px,4vw,40px) 0;border-bottom:0;border-top:1px solid var(--rule);overflow:visible;margin:0;background:none}
+.legal h2{font-size:clamp(1.3rem,2.6vw,1.6rem);margin-bottom:16px}
+.legal p{max-width:62ch;margin-bottom:12px}
+.legal dl{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:8px 28px}
+.legal dd{font-weight:400;margin:0}
+.legal a{color:inherit;text-decoration-color:var(--signal);text-underline-offset:3px}
+.todo{background:var(--signal);color:#fff;padding:0 6px;font:500 .8rem var(--mono);text-transform:uppercase;letter-spacing:.04em}
+@media(max-width:760px){.legal dl{grid-template-columns:1fr;gap:2px}.legal dd{margin-bottom:10px}}

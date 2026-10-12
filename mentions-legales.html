@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentions légales | Xavier Pelle</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f1ece1">
+<link rel="stylesheet" href="style.css">
+<script>
+// Thème avant l'affichage (pas de flash). Par défaut : réglage clair/sombre du navigateur.
+// Un choix fait avec le bouton est mémorisé ('theme-choice') ; ?theme=dark|light force le thème sans rien mémoriser (tests).
+(function(){var r=document.documentElement,t=null;
+try{t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('theme-choice');localStorage.removeItem('theme')}catch(e){}
+if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+if(t==='dark')r.dataset.theme='dark'})();
+</script>
+</head>
+<body class="legal-page">
+
+<header class="top">
+  <a href="./" class="mark">Xavier Pelle</a>
+  <div class="top-r">
+    <nav><a href="./">← Retour au site</a></nav>
+    <button class="theme" type="button" aria-label="Basculer mode jour / nuit"><span>Nuit</span></button>
+  </div>
+</header>
+
+<main class="legal">
+  <p class="meta">Informations obligatoires</p>
+  <h1>Mentions légales</h1>
+
+  <section>
+    <h2><span class="num">01</span>Éditeur du site</h2>
+    <dl>
+      <dt>Nom</dt><dd>Xavier Pelle</dd>
+      <dt>Statut</dt><dd>Entreprise individuelle en cours de création</dd>
+      <dt>SIRET</dt><dd>En cours d'immatriculation</dd>
+      <dt>Contact</dt><dd><a href="mailto:contact@xavierpelle.fr">contact@xavierpelle.fr</a></dd>
+      <dt>Directeur de la publication</dt><dd>Xavier Pelle</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2><span class="num">02</span>Hébergement</h2>
+    <p>GitHub, Inc. (service GitHub Pages)<br>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br><a href="https://github.com">github.com</a></p>
+  </section>
+
+  <section>
+    <h2><span class="num">03</span>Données personnelles</h2>
+    <p>Ce site ne dépose aucun cookie, n'utilise aucun outil de mesure d'audience et ne charge aucun service tiers (les polices de caractères sont hébergées sur le site). Le seul choix enregistré dans votre navigateur est le mode jour ou nuit, si vous le modifiez.</p>
+    <p>L'hébergeur peut conserver des journaux techniques (dont l'adresse IP) pour assurer la sécurité du service.</p>
+    <p>Si vous écrivez à <a href="mailto:contact@xavierpelle.fr">contact@xavierpelle.fr</a>, vos coordonnées et votre message servent uniquement à vous répondre et à assurer le suivi de votre demande. Ils ne sont ni vendus ni transmis à des tiers, et sont supprimés au plus tard trois ans après notre dernier échange.</p>
+    <p>Conformément au RGPD, vous pouvez demander l'accès, la rectification, l'effacement de vos données ou vous opposer à leur traitement en écrivant à la même adresse. Vous pouvez aussi adresser une réclamation à la <a href="https://www.cnil.fr">CNIL</a>.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">04</span>Propriété intellectuelle</h2>
+    <p>Les textes, illustrations et le code de ce site sont la propriété de Xavier Pelle, sauf mention contraire. Toute reproduction sans autorisation est interdite. Les polices Fraunces, Instrument Sans et JetBrains Mono sont utilisées sous licence SIL Open Font License.</p>
+  </section>
+</main>
+
+<footer><span>© <span id="y"></span> Xavier Pelle</span><a href="./">xavierpelle.fr</a></footer>
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+(function(){var b=document.querySelector('.theme'),r=document.documentElement,m=document.querySelector('meta[name=theme-color]'),
+mq=matchMedia('(prefers-color-scheme: dark)');
+function set(d){if(d)r.dataset.theme='dark';else delete r.dataset.theme;
+b.querySelector('span').textContent=d?'Jour':'Nuit';b.setAttribute('aria-pressed',d);m.setAttribute('content',d?'#16150f':'#f1ece1')}
+function choice(){try{return localStorage.getItem('theme-choice')}catch(e){return null}}
+b.addEventListener('click',function(){var d=r.dataset.theme!=='dark';set(d);
+// revenir au même thème que le navigateur = on recommence à le suivre
+try{if(d===mq.matches)localStorage.removeItem('theme-choice');else localStorage.setItem('theme-choice',d?'dark':'light')}catch(e){}});
+// le navigateur change de thème (ex. passage auto en mode sombre le soir) : on suit, sauf choix manuel
+mq.addEventListener('change',function(e){if(!choice()&&!/[?&]theme=/.test(location.search))set(e.matches)});
+set(r.dataset.theme==='dark')})();
+</script>
+</body>
+</html>
